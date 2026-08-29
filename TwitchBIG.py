@@ -1200,6 +1200,7 @@ class StreamRecorder:
         initial_off = None
 
         self._seg_pattern_store = str(work_dir / f"{safe_title}_%02d.{ext}")
+        glob_pat = f"{glob_mod.escape(safe_title)}_*.{ext}"
 
         self._watcher = SegmentWatcher(
             work_dir=work_dir, glob_pattern=glob_pat,
